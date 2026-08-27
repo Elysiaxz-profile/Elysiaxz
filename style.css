@@ -333,16 +333,22 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   animation: card-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
   transition: border-color var(--transition), box-shadow var(--transition);
+  /* Ensure border renders symmetrically on all sides */
+  padding: 1px;
+  background-clip: padding-box;
 }
 
 .spotify-embed:hover {
-  border-color: rgba(30, 215, 96, 0.3);
-  box-shadow: 0 4px 28px rgba(30, 215, 96, 0.12);
+  border-color: rgba(30, 215, 96, 0.5);
+  box-shadow:
+    0 4px 28px rgba(30, 215, 96, 0.15),
+    0 0 0 1px rgba(30, 215, 96, 0.15);
 }
 
 .spotify-embed iframe {
   display: block;
-  border-radius: 14px;
+  border-radius: 13px;
+  width: 100%;
 }
 
 /* Bio clickable link */
